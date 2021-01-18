@@ -1,0 +1,14 @@
+#contain{
+    display: flex;
+}
+
+#container_left{
+	float:left;
+
+}
+
+
+#contain_right{
+	float:right;
+
+}
