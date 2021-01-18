@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>鱿鱼编辑器</title>
+		<script src="js/blockly_compressed.js"></script>   <!--blockly的内核文件-->
+	  	<script src="js/blocks_compressed.js"></script>     <!--基础积木集(blocks_compressed中定义了一些基础积木: 类似print、if、list等，我们可以在自己的js脚本中自定义更多的积木)-->
+	  	<script src="msg/blocks-msg/js/en.js"></script>
+		<link rel="stylesheet" href="css/demo02_octopus.css" type="text/css">
+</head>
+
+
+<body>
+<header></header>
+<section>
+	<div class="left_show">
+		<div class="pic"></div>
+		<div class="control_panel"></div>
+	</div>
+		<div class="right_code_area">
+			<div class="blockly"></div>
+		</div>
+	</div>
+	
+</section>
+<footer>
+</footer>
+
+
+<script type="text/javascript">
+ var demoWorkspace = Blockly.inject('blocklyDiv',
+        { media: 'media/',
+          toolbox: document.getElementById('toolbox')}
+        );
+</script>
+</body>
+</html>
+
