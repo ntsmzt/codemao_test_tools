@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Blockly Demo: Fixed Blockly</title>
+
+  <!-- 需要的依赖文件 -->
+
+  <script src="js/blockly_compressed.js"></script>   <!--blockly的内核文件-->
+  <script src="js/blocks_compressed.js"></script>     <!--基础积木集(blocks_compressed中定义了一些基础积木: 类似print、if、list等，我们可以在自己的js脚本中自定义更多的积木)-->
+  <script src="msg/blocks-msg/js/en.js"></script>    <!--英文语言包，中文为zhan.js-->
+  <script src="js/javascript_compressed.js"></script>  <!--积木转js代码依赖-->
+
+  <!-- <style>
+    body {
+      background-color: #fff;
+      font-family: sans-serif;
+    }
+    h1 {
+      font-weight: normal;
+      font-size: 140%;
+    }
+  </style> -->
+
+</head>
+
+
+<body>
+  <!-- <h1><a href="https://developers.google.com/blockly/">Blockly</a> &gt;
+    <a href="../index.html">Demos</a> &gt; Fixed Blockly</h1>
+
+  <p>This is a simple demo of injecting Blockly into a fixed-sized 'div' element.</p>
+
+  <p>&rarr; More info on <a href="https://developers.google.com/blockly/guides/configure-blockly/web/fixed-size">injecting fixed-sized Blockly</a>&hellip;</p> -->
+
+
+    <!-- 显示show js code 按钮 -->
+    <p>
+      <button onclick="showCode()">Show js code</button>
+
+      <button onclick="runCode()">Run js code</button>
+    </p>
+
+  <!-- 在页面中准备积木箱的注入区域 -->
+  <div id="blocklyDiv" style="height: 480px; width: 800px;"></div>
+
+  <!-- 侧边栏积木箱，这些积木箱定义在blocks_compressed.js中 -->
+  <xml id="toolbox" style="display: none">
+    <block type="controls_if"></block>
+    <block type="logic_compare"></block>
+    <block type="controls_repeat_ext"></block>
+    <block type="math_number"></block>
+    <block type="math_arithmetic"></block>
+    <block type="text"></block>
+    <block type="text_print"></block>
+  </xml>
+
+
+  <script>
+     //将积木箱注入页面 
+    var demoWorkspace = Blockly.inject('blocklyDiv',
+        { media: 'media/',
+          toolbox: document.getElementById('toolbox')
+
+
+        }
+        );
+
+    //生成js代码并显示
+    function showCode() {
+      Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+      var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+      alert(code);
+    }
+
+    //生成js代码并运行
+    function runCode() {
+      window.LoopTrap = 1000;
+      Blockly.JavaScript.INFINITE_LOOP_TRAP = 
+        'if(--window.LoopTrap == 0) throw "Infinite loop.";\n';
+      var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
+      Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+      try {
+        eval(code);
+      }
+      catch(e){
+        alert(e);
+      }
+    }
+
+  </script>
+
+</body>
+</html>

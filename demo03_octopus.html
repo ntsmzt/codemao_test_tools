@@ -3,26 +3,22 @@
 <head>
 		<title>鱿鱼编辑器</title>
 		
-		<!-- 使用压缩 -->
-		
-		blockly的内核文件
-		<!--基础积木集(blocks_compressed中定义了一些基础积木: 类似print、if、list等，我们可以在自己的js脚本中自定义更多的积木)-->
-		<script src="js/blockly_compressed.js"></script>
-		<!-- 使用语言载入 -->
-		<script src="msg/blocks-msg/js/en.js"></script>
-		<!--积木转js代码依赖-->
-		<script src="js/javascript_compressed.js"></script>  
-		
 		<!-- 使用非压缩 -->
-		
-		
-		
-		
+		<script src="blockly_uncompressed.js"></script>
+		<script src="blocks/colour.js"></script>
+		<script src="blocks/lists.js"></script>
+		<script src="blocks/logic.js"></script>
+		<script src="blocks/loops.js"></script>
+		<script src="blocks/math.js"></script>
+		<script src="blocks/procedures.js"></script>
+		<script src="blocks/text.js"></script>
+		<script src="blocks/variables.js"></script>
+		<script src="blocks/variables_dynamic.js"></script>
+		<script src="msg/blocks-msg/js/en.js"></script>
 		
 		<!-- 导入自己的积木 -->
-		<script src="blocks/my_blocks.js"></script> 
+		<script src="blocks/myblocks.js"></script> 
 		<script src="generators/javascript/mygenerators.js"></script>
-		
 		
 		<!-- 导入基础模块的generators -->
 		<script src="generators/javascript.js"></script>
@@ -35,8 +31,8 @@
 		<script src="generators/javascript/text.js"></script>
 		<script src="generators/javascript/variables.js"></script>
 		<script src="generators/javascript/variables_dynamic.js"></script> 
-		
 		<link rel="stylesheet" href="css/demo02_octopus.css" type="text/css">
+
 </head>
 
 
@@ -56,13 +52,11 @@
 				<div id="blocklyDiv" style="width:100%;height:100%"></div>
 				<!-- 侧边栏积木箱，这些积木箱定义在blocks_compressed.js中 -->
 				  <xml id="toolbox" style="display: none">
-				    <category name="local blocks">
-						<block type="controls_if"></block>
-						<block type="logic_compare"></block>
-					</category>
-					<category name="my blocks">
-							<block type="walk_left"></block>	
-					</category>
+					<!-- <category name="my blocks"> -->
+							<block type="walk_left"></block>
+							<!-- <block type="walk_right"></block> -->
+							<block type="procedures_defreturn"></block>
+					<!-- </category> -->
 				  </xml>
 
 			
@@ -70,6 +64,7 @@
 	</div>
 </section>
 <footer>
+	
 </footer>
 
 
