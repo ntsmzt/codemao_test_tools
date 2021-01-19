@@ -386,3 +386,9 @@ Blockly.JavaScript['lists_reverse'] = function(block) {
   var code = list + '.slice().reverse()';
   return [code, Blockly.JavaScript.ORDER_FUNCTION_CALL];
 };
+
+Blockly.JavaScript['walk_left']=function(block){
+  var code='document.getElementById("dan").innerHTML="角色向右移动!";\n';
+
+  return code;
+};

@@ -20,6 +20,7 @@
 		<script src="blocks/myblocks.js"></script> 
 		<script src="generators/javascript/mygenerators.js"></script>
 		
+		
 		<!-- 导入基础模块的generators -->
 		<script src="generators/javascript.js"></script>
 		<script src="generators/javascript/colour.js"></script>
@@ -40,11 +41,16 @@
 <header></header>
 <section>
 	<div class="left_show">
-		<div class="pic"></div>
+		<div class="pic">
+			<div id="dan" >角色在这里</div>	
+
+
+
+		</div>
 		<div class="control_panel">
 			<button>重新启动</button>
 			<button onclick="showCode()">展示代码</button>
-			<button style="float: right;">开始运行</button>
+			<button style="float: right;" onclick="runCode()">开始运行</button>
 		</div>
 	</div>
 	<div class="right_code_area">
@@ -90,6 +96,7 @@
 	          'if (--window.LoopTrap == 0) throw "Infinite loop.";\n';
 	      var code = Blockly.JavaScript.workspaceToCode(demoWorkspace);
 	      Blockly.JavaScript.INFINITE_LOOP_TRAP = null;
+	      console.log("run code");
 	      try {
 	        eval(code);
 	      } catch (e) {

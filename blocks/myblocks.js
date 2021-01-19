@@ -13,3 +13,15 @@ Blockly.Blocks['walk_left']={
 		this.setHelpUrl("");
 	}
 };
+
+
+Blockly.Blocks['walk_right']={
+	init:function(){
+		this.appendDummyInput().appendField("向右走");
+		this.setPreviousStatement(true);
+		this.setNextStatement(true);
+		this.setColour(255);
+		this.setTooltip("");
+		this.setHelpUrl("");
+	}
+};
