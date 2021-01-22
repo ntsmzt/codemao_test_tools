@@ -54,6 +54,30 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "tooltip": "%{BKY_CONTROLS_REPEAT_TOOLTIP}",
     "helpUrl": "%{BKY_CONTROLS_REPEAT_HELPURL}"
   },
+//张桐编辑的积木内容my block of loops
+//   {
+//   "type": "controls_repeat_modify",
+//   "message0": "%{BKY_CONTROLS_REPEAT_TITLE}",
+//   "args0": [{
+//     "type": "input_value",
+//     "name": "TIMES",
+//     "check": "Number"
+//   }],
+//   "message1": "%{BKY_CONTROLS_REPEAT_INPUT_DO} %1",
+//   "args1": [{
+//     "type": "input_statement",
+//     "name": "DO"
+//   }],
+//   "previousStatement": null,
+//   "nextStatement": null,
+//   "colour": 230,
+//   "style": "loop_blocks",
+//   "tooltip": "%{BKY_CONTROLS_REPEAT_TOOLTIP}",
+//   "helpUrl": "%{BKY_CONTROLS_REPEAT_HELPURL}"
+// },
+
+
+
   // Block for repeat n times (internal number).
   // The 'controls_repeat_ext' block is preferred as it is more flexible.
   {
